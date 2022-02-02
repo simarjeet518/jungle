@@ -54,15 +54,22 @@ main section.categories-show {
         position: absolute;
         top: 0;
         left: 0;
-        padding: 10px;
-        background-color: red;
+        padding: 7px;
+        background-color: rgb(235, 118, 118);
         border-top-left-radius: 4px;
         border-bottom-right-radius: 20px;
-        font-size: 0.8em;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        opacity: 0.7;
       }
 
       &:hover {
         border-color: #999;
+
+        aside.sold-out-badge {
+          opacity: 1;
+        }
 
         footer {
           opacity: 1;
