@@ -2,12 +2,42 @@
 
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
+    <h3>Email : <%= @order.email %></h3>
   </header>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <table class="table table-bordered">
+
+        <thead>
+          <tr>
+            <th colspan="2">Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @products.each_with_index do |item, index| %>
+            <%=render 'line_item' , { product: item, quantity: @order.line_items[index].quantity} %>
+          <% end %>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th colspan="4">
+              TOTAL:
+            </th>
+            <th>
+              <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
+            </th>
+          </tr>
+        </tfoot>
+    </table>
+     
   </div>
 
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+  <%= link_to "Order Again", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
