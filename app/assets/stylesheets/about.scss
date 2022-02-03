@@ -1,0 +1,76 @@
+.about-us {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us--values {
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.values {
+  margin-top: 50px;
+  display: flex;
+  width: 1200px;
+  animation: scroll 10s linear infinite;
+  scroll-behavior: smooth;
+}
+
+.values:hover {
+  animation-play-state: paused;
+}
+
+.values--container:hover {
+  transform: scale(1.02);
+  transition: all 0.4s;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-400px);
+  }
+}
+
+.values--container h4 {
+  font-weight: bolder;
+  font-size: 1.5em;
+  color: rgb(3, 3, 31);
+}
+
+.values--container {
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  padding-top: 80px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 400px;
+  height: 330px;
+  border: solid 2px;
+  margin-left: 40px;
+  border-radius: 20px;
+  transform: translate3d(0, 0, 0);
+  background-color: rgb(202, 149, 202);
+}
+
+.values div:first-child {
+  background-color: rgb(211, 63, 63);
+}
+
+.values div:nth-child(2) {
+  background-color: rgb(10, 10, 156);
+}
+
+.values div:nth-child(3) {
+  background-color: rgb(55, 83, 55);
+}
+
+.values div:nth-child(4) {
+  background-color: orange;
+}
