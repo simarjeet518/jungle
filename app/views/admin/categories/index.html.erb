@@ -5,15 +5,15 @@
   </header>
 
    <div class="well">
-    <%= link_to '+ New Category', class:'btn btn-info' %>
+    <%= link_to '+ New Category','categories/new', class:'btn btn-info' %>
   </div> 
 
-  <div class="panel panel-default products">
-
-    <table class="table table-bordered">
-     <%= render :partial => 'categories' %>
-    </table>
-
+  <div class="panel">
+    <div class="categories">
+      <table class="table table-bordered">
+      <%= render :partial => 'categories' %>
+      </table>
+    </div>
   </div>
 
 </section>
