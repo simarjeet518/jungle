@@ -1,23 +1,7 @@
 <h1 class="category--header">Admin Dashboard</h1>
 <div class="categories">
   <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th >Category</th>
-        <th >Total Products</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <%@categories.each_with_index do |item, index|%>
-        <tr>
-          <% link = "/categories/#{item.id}"%>
-          <td><%= link_to item.name, link %></td>
-          <td><%=link_to item.products.size, link %></td>
-        </tr>
-      <% end%>
-    </tbody>
-
+   <%= render :partial => 'admin/categories/categories' %>
     <tfoot>
       <tr>
         <th>Total categories :<%= @categories.size%></th>
