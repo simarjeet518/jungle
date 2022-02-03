@@ -5,7 +5,7 @@
   </header>
 
   <div class="well">
-    <%= link_to 'All Categories', '/categories', class: 'btn btn-info' %>
+    <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
   </div>
 
   <div class="row">
@@ -13,7 +13,7 @@
       <%= form_for [:admin, @category] do |form| %>
 
         <% if form.object.errors.any? %>
-          <div class="alert alert-danger">
+          <div class="alert alert-danger error">
             <strong>The following errors prevented saving:</strong>
             <ul>
               <% form.object.errors.full_messages.each do |error| %>
