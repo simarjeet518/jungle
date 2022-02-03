@@ -1,12 +1,12 @@
 class Admin::DashboardController < ApplicationController
   def show
-  @category_count = Category.all.count
-  @category = Category.all
+  @categories_count = Category.all.count
+  @categories = Category.all
 
-  @Each_category_product_count = @category.map {
+  @each_category_products_count = @categories.map {
     |item|
    item.products.count
   }
-  @product_total_count = Product.all.count
+  @products_total_count = Product.all.count
   end
 end

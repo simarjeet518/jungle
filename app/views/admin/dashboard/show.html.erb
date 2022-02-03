@@ -1,2 +1,30 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin::Dashboard</h1>
+<div class="panel panel-default items">
+  <table class="table table-bordered">
+  <thead>
+  <tr>
+  <th >Category</th>
+  <th >Total Products</th>
+  </tr>
+  </thead>
+  <tbody>
+   <%@categories.each_with_index do |item, index|%>
+   <tr>
+   <% link = "/categories/#{item.id}"%>
+   <td ><%= link_to item.name ,link %></td>
+   <td><%=link_to @each_category_products_count[index], link %></td>
+   </tr>
+   <% end%>
+  </tbody>
+  <tfoot>
+          <tr>
+            <th>
+              Total categories :
+              <%= @categories.count%>
+            </th>
+            <th>Total Products :
+            <%= @products_total_count %></th>
+          </tr>
+        </tfoot>
+  </table>
+</div>
