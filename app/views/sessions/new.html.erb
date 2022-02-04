@@ -8,18 +8,23 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
       <%= form_tag '/login' do %>
-         
-          <div class="form-group">
-              <%= label_tag :email %>
-              <%= email_field_tag :email,'', class: 'form-control' %>
+        <%if @error%>
+         <div class="well w-100">
+            <h4>Email password does not exist</h4>
+            <h5><%= link_to 'click here to sign up','/signup'%> <h5>
           </div>
+        <% end%>      
+        <div class="form-group">
+          <%= label_tag :email %>
+          <%= email_field_tag :email,'', class: 'form-control' ,required: 'true'%>
+        </div>
 
-          <div class="form-group">
-              <%= label_tag :password %>
-              <%= password_field_tag :password,'', class: 'form-control' %>
-          </div>
+        <div class="form-group">
+          <%= label_tag :password %>
+          <%= password_field_tag :password,'', class: 'form-control',required: 'true' %>
+        </div>
 
-          <%= submit_tag 'Login', class: 'btn btn-primary' %>
+        <%= submit_tag 'Login', class: 'btn btn-primary' %>
       <% end %>
 
     </div>
