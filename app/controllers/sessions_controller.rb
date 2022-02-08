@@ -3,14 +3,12 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def create
-    user = User.find_by_email(params[:email])
+  def create  
     @error = false
-    if user && user.authenticate(params[:password])
+    if user = User.authenticate_with_credentials(params[:email], params[:password])
       session[:user_id] = user.id 
-      # only asking authorization when user trying to checkout then after login redirected to same view
       redirect_to '/cart'
-    else
+    else 
       @error = true
       render :new
     end
@@ -20,5 +18,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to '/login'
   end
+
 
 end
